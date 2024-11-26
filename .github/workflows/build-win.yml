@@ -159,7 +159,7 @@ jobs:
           copy %WDIR%\.github\workflows\do-release.cmd %WDIR%\build\do-release.cmd
 
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: ${{ github.workspace }}\build\**\*
 
@@ -167,7 +167,7 @@ jobs:
     runs-on: windows-2019
     needs: build
     steps:
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
 
     - name: Generate binaries for release
       shell: cmd
@@ -179,7 +179,7 @@ jobs:
       with:
           name: artifact
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: 7-Zip ZS Release binaries
         path: |
