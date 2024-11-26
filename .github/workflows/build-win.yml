@@ -182,6 +182,7 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: 7-Zip ZS Release binaries
+        overwrite: true
         path: |
           artifact\*.exe
           artifact\*.7z
